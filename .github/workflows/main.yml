@@ -6,7 +6,7 @@ on:
     branches:
       - main
   schedule:
-    - cron:  '0 23 28 * *'
+    - cron: "0 23 28 * *"
   workflow_dispatch:
 
 permissions:
@@ -14,28 +14,6 @@ permissions:
   contents: read
 
 jobs:
-  scratch:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: https://ghcr.io
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6
-        with:
-          file: ./scratch.Dockerfile
-          push: true
-          tags: ghcr.io/${{ github.repository }}:latest,ghcr.io/${{ github.repository }}:1
-          platforms: linux/arm64,linux/amd64
   alpine:
     runs-on: ubuntu-latest
     steps:
@@ -54,7 +32,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
-          file: ./alpine.Dockerfile
+          file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}:alpine,ghcr.io/${{ github.repository }}:1-alpine
+          tags: ghcr.io/${{ github.repository }}:alpine,ghcr.io/${{ github.repository }}:1-alpine,ghcr.io/${{ github.repository }}:latest
           platforms: linux/arm64,linux/amd64
