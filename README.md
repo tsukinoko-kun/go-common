@@ -14,7 +14,7 @@ Docker images with Go and common development tools pre-installed.
 ### Debian-based (default)
 - **Tags**: `latest`, `1`
 - **Base**: `golang:1`
-- **Platforms**: `windows/amd64`, `linux/amd64`, `linux/arm64/v8`
+- **Platforms**: `linux/amd64`, `linux/arm64/v8`
 
 ### Alpine-based
 - **Tags**: `alpine`, `1-alpine`
