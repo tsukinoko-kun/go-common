@@ -4,6 +4,7 @@ Docker images with Go and common development tools pre-installed.
 
 ## Included Tools
 
+- [Node.js](https://nodejs.org) with npm and [pnpm](https://pnpm.io)
 - [templ](https://templ.guide)
 - [sqlc](https://sqlc.dev)
 - [protobuf](https://protobuf.dev)
