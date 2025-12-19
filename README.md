@@ -8,6 +8,7 @@ Docker images with Go and common development tools pre-installed.
 - [sqlc](https://sqlc.dev)
 - [protobuf](https://protobuf.dev)
 - [just](https://just.systems)
+- [zig](https://ziglang.org) (configured as C/C++ compiler for CGO)
 
 ## Docker Images
 
