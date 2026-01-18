@@ -1,6 +1,7 @@
 FROM golang:1
 LABEL org.opencontainers.image.description "Latest Go with templ, sqlc, protobuf, grpc, just, zig, node.js, pnpm"
 
+ENV CI=true
 ENV CGO_ENABLED=1
 ENV CC="zig cc"
 ENV CXX="zig c++"

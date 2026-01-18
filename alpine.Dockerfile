@@ -1,6 +1,7 @@
 FROM golang:1-alpine
 LABEL org.opencontainers.image.description "Latest Go based on Alpine with templ, sqlc, protobuf, grpc, just, zig, node.js, pnpm"
 
+ENV CI=true
 ENV CGO_ENABLED=1
 ENV CC="zig cc"
 ENV CXX="zig c++"
